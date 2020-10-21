@@ -1,0 +1,15 @@
+{
+  "require": {
+    "smarty/smarty": "^3.1",
+    "altorouter/altorouter": "^2.0",
+    "rakit/validation": "^1.4",
+    "illuminate/database": "^8.11",
+    "illuminate/events": "^8.11",
+    "illuminate/pagination": "^8.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "app"
+    }
+  }
+}
