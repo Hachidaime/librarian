@@ -3,7 +3,7 @@
 use app\controllers\Controller;
 use app\helpers\Flasher;
 use app\helpers\Functions;
-use app\models\UserModel;
+use app\models\User;
 
 /**
  * @desc this class will handle Uang controller
@@ -43,7 +43,7 @@ class UserController extends Controller
         $page = $_POST['page'] ?? 1;
         $keyword = $_POST['keyword'] ?? null;
 
-        $user = UserModel::where('id', '>', 0);
+        $user = User::where('id', '>', 0);
         if (!is_null($keyword)) {
             $user = $user
                 ->where('usr_name', 'LIKE', "%{$keyword}%")
@@ -78,7 +78,7 @@ class UserController extends Controller
     {
         $tag = 'Tambah';
         if (!is_null($id)) {
-            $count = UserModel::where('id', $id)->count();
+            $count = User::where('id', $id)->count();
             if (!$count) {
                 Flasher::setFlash(
                     'Data tidak ditemukan!',
@@ -105,7 +105,7 @@ class UserController extends Controller
 
     public function detail()
     {
-        $detail = UserModel::where('id', $_POST['id'])
+        $detail = User::where('id', $_POST['id'])
             ->first()
             ->toArray();
         unset($detail['usr_password']);
@@ -128,10 +128,10 @@ class UserController extends Controller
             }
 
             if ($data['id'] > 0) {
-                $user = UserModel::find($data['id']);
+                $user = User::find($data['id']);
                 $tag = 'Ubah';
             } else {
-                $user = new UserModel();
+                $user = new User();
                 $tag = 'Tambah';
             }
 
@@ -146,7 +146,7 @@ class UserController extends Controller
             $id = $data['id'] > 0 ? $data['id'] : $user->id;
 
             if ($result) {
-                $detail = UserModel::where('id', $id)
+                $detail = User::where('id', $id)
                     ->first()
                     ->toArray();
 
@@ -180,7 +180,7 @@ class UserController extends Controller
             'usr_name' => 'required',
             'usr_username' =>
                 'required|max:20|min:3|unique:' .
-                UserModel::getTableName() .
+                User::getTableName() .
                 ",id,{$data['id']}",
         ];
 
@@ -219,7 +219,7 @@ class UserController extends Controller
     {
         $id = (int) $_POST['id'];
         $tag = 'Hapus';
-        $result = UserModel::destroy($id);
+        $result = User::destroy($id);
 
         if ($result) {
             Flasher::setFlash(

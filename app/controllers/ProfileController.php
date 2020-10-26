@@ -3,8 +3,7 @@
 use app\controllers\Controller;
 use app\helpers\Flasher;
 use app\helpers\Functions;
-use app\models\LogModel;
-use app\models\UserModel;
+use app\models\User;
 
 class ProfileController extends Controller
 {
@@ -24,8 +23,8 @@ class ProfileController extends Controller
 
     public function search()
     {
-        $log = LogModel::orderBy('created_at', 'desc')
-            ->paginate(ROWS_PER_PAGE, ['*'], 'page', $_POST['page'])
+        $log = app\models\Log::orderBy('created_at', 'desc')
+            ->paginate(5, ['*'], 'page', $_POST['page'])
             ->toArray();
 
         [$list, $info] = Functions::paginationFormat($log);
@@ -60,7 +59,7 @@ class ProfileController extends Controller
 
     public function detail()
     {
-        $detail = UserModel::where('id', $_POST['id'])->first();
+        $detail = User::where('id', $_POST['id'])->first();
         unset($detail['usr_password']);
 
         echo json_encode($detail);
@@ -70,7 +69,7 @@ class ProfileController extends Controller
     public function submit()
     {
         $data = $_POST;
-        $detail = UserModel::where('id', $_POST['id'])
+        $detail = User::where('id', $_POST['id'])
             ->first()
             ->toArray();
 
@@ -81,7 +80,7 @@ class ProfileController extends Controller
                 ? Functions::encrypt($data['usr_password'])
                 : '';
 
-            $user = UserModel::find($data['id']);
+            $user = User::find($data['id']);
             $user->usr_name = $_POST['usr_name'];
             $user->usr_username = $_POST['usr_username'];
             if (!empty($data['usr_password'])) {
@@ -123,7 +122,7 @@ class ProfileController extends Controller
             'usr_name' => 'required',
             'usr_username' =>
                 'required|max:20|min:3|unique:' .
-                UserModel::getTableName() .
+                User::getTableName() .
                 ",id,{$data['id']}",
         ];
 

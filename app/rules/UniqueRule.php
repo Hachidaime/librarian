@@ -1,11 +1,9 @@
 <?php
 
 namespace app\rules;
-use Rakit\Validation\Rule;
-// use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Capsule\Manager as DB;
 
-class UniqueRule extends Rule
+class UniqueRule extends \Rakit\Validation\Rule
 {
     protected $message = ':attribute :value has been used';
 

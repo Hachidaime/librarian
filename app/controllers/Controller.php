@@ -6,7 +6,6 @@ use app\rules\UniqueRule;
 use app\rules\LoginRule;
 use app\helpers\Flasher;
 use app\helpers\Functions;
-use app\models\LogModel;
 
 /**
  * Class Controller
@@ -113,7 +112,7 @@ class Controller
      */
     protected function writeLog(string $type, string $description)
     {
-        $log = new LogModel();
+        $log = new \app\models\Log();
         $log->log_type = $type;
         $log->log_description = $description;
         $log->created_by = $_SESSION['USER']['id'];

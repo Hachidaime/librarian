@@ -1,22 +1,15 @@
 <?php
-
 namespace app\models;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * @desc this class will handle User model
- *
- * @class UserModel
- * @author Hachidaime
- */
-class UserModel extends Model
+class Log extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'lib_user';
+    protected $table = 'lib_log';
 
     /**
      * Indicates if the model should be timestamped.
@@ -24,9 +17,4 @@ class UserModel extends Model
      * @var bool
      */
     public $timestamps = false;
-
-    public static function getTableName()
-    {
-        return with(new static())->getTable();
-    }
 }
