@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <h1 class="m-0 text-dark">{$title}</h1>
+        <h1 class="m-0 text-dark">
+          {if $icon ne ''}
+          <i class="{$icon} mr-1"></i>
+          {/if}{$title}
+        </h1>
       </div>
       <!-- /.col -->
       <div class="col-sm-6">

@@ -12,6 +12,7 @@ class ProfileController extends Controller
         parent::__construct();
         $this->setControllerAttribute(__CLASS__);
         $this->smarty->assign('title', $this->title);
+        $this->smarty->assign('icon', 'fas fa-user-circle');
     }
 
     public function index()

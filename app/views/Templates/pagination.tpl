@@ -7,18 +7,18 @@
     <strong>Jumlah Data:</strong>
     <span id="totalRows"></span>
   </span>
-  <div style="width: 150px;">
+  <div style="width: 150px">
     <div class="input-group">
       <div class="input-group_prepend">
-        <button class="btn bg-gradient-blue btn-flat" id="previousBtn">
+        <button class="btn bg-gradient-yellow btn-flat" id="previousBtn">
           <i class="fas fa-caret-left"></i>
         </button>
       </div>
-      <div style="width: 80px;">
-        <select class="custom-select rounded-0" id="page"> </select>
+      <div style="width: 80px">
+        <select class="custom-select rounded-0" id="page"></select>
       </div>
       <div class="input-group_append">
-        <button class="btn bg-gradient-blue btn-flat" id="nextBtn">
+        <button class="btn bg-gradient-yellow btn-flat" id="nextBtn">
           <i class="fas fa-caret-right"></i>
         </button>
       </div>

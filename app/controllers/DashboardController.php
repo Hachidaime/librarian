@@ -17,6 +17,7 @@ class DashboardController extends Controller
         parent::__construct();
         $this->setControllerAttribute(__CLASS__);
         $this->smarty->assign('title', $this->title);
+        $this->smarty->assign('icon', 'fas fa-tachometer-alt');
     }
     /**
      * function index

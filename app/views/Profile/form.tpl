@@ -1,8 +1,8 @@
 {block name='formContent'}
 <div class="col-lg-6">
   <div class="card rounded-0">
-    <div class="card-header bg-gradient-navy rounded-0">
-      <h3 class="card-title text-warning">Ubah Profile</h3>
+    <div class="card-header bg-gradient-orange rounded-0">
+      <h3 class="card-title text-dark">Ubah Profile</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->

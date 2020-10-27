@@ -15,9 +15,9 @@ $router->addRoutes([
     ['GET', '/logout', 'LoginController::logout', 'logout'],
 ]);
 
-$master = ['User', 'Profile'];
+$access = ['User', 'Profile', 'Book'];
 
-foreach ($master as $value) {
+foreach ($access as $value) {
     $controller = $value;
     $route = strtolower($value);
 
@@ -33,7 +33,6 @@ foreach ($master as $value) {
 }
 
 $router->addRoutes([
-    ['POST', '/package/submitexpires', 'PackageController::submitExpires'],
     ['GET', '/package/activity', 'ProfileController::activity'],
 ]);
 

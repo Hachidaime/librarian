@@ -10,8 +10,8 @@
 <div class="row">
   <div class="col-12">
     <div class="card rounded-0">
-      <div class="card-header bg-gradient-navy rounded-0">
-        <h3 class="card-title text-warning">{$subtitle}</h3>
+      <div class="card-header bg-gradient-orange rounded-0">
+        <h3 class="card-title text-dark">{$subtitle}</h3>
         <div class="card-tools">
           <div class="input-group input-group-sm" style="width: 150px">
             <input

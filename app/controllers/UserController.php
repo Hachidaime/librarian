@@ -20,6 +20,7 @@ class UserController extends Controller
         parent::__construct();
         $this->setControllerAttribute(__CLASS__);
         $this->smarty->assign('title', $this->title);
+        $this->smarty->assign('icon', 'fas fa-user');
 
         if (!$_SESSION['USER']['usr_is_master']) {
             header('Location:' . BASE_URL . '/403');

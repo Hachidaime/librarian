@@ -8,8 +8,8 @@
   {block 'formContent'}{/block}
   <div class="col-lg-6">
     <div class="card rounded-0">
-      <div class="card-header bg-gradient-navy rounded-0">
-        <h3 class="card-title text-warning">Log Aktivitas</h3>
+      <div class="card-header bg-gradient-orange rounded-0">
+        <h3 class="card-title text-dark">Log Aktivitas</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body table-responsive p-0">
@@ -18,9 +18,7 @@
             <tr>
               <th class="text-right align-middle" width="40px">#</th>
               <th class="text-center align-middle" width="*">Aktivitas</th>
-              <th class="text-center align-middle" width="30%">
-                Tanggal Jam
-              </th>
+              <th class="text-center align-middle" width="30%">Tanggal Jam</th>
             </tr>
           </thead>
           <tbody id="result_data"></tbody>
