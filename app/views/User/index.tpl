@@ -81,8 +81,6 @@
     params['page'] = page
     params['keyword'] = $('#keyword').val()
 
-    const ROWS_PER_PAGE = '{/literal}{$smarty.const.ROWS_PER_PAGE}{literal}'
-
     $.post(
       `${MAIN_URL}/search`,
       params,
