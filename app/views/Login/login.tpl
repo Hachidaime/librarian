@@ -10,8 +10,8 @@
   </div>
   <!-- /.login-logo -->
   <div class="card rounded-0">
-    <div class="card-header bg-gradient-navy rounded-0">
-      <h3 class="card-title text-warning">Log in to start your session</h3>
+    <div class="card-header bg-gradient-orange rounded-0">
+      <h3 class="card-title text-dark">Log in to start your session</h3>
     </div>
     <div class="card-body login-card-body">
       <form
@@ -54,7 +54,7 @@
           <div class="col-12">
             <button
               type="button"
-              class="btn btn-block btn-flat bg-gradient-warning text-navy"
+              class="btn btn-block btn-flat bg-gradient-olive"
               id="btn_login"
             >
               Log In
