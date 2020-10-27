@@ -1,16 +1,13 @@
 <?php
 use app\helpers\Flasher;
 use app\controllers\Controller;
-use app\models\UserModel;
+use app\models\User;
 
 class LoginController extends Controller
 {
-    protected $userModel;
-
     public function __construct()
     {
         parent::__construct();
-        $this->userModel = new UserModel();
         $this->smarty->assign('title', 'Log In');
     }
 
@@ -30,11 +27,7 @@ class LoginController extends Controller
     public function submit()
     {
         if ($this->validate()) {
-            // [$detail] = $this->userModel->singlearray([
-            //     ['usr_username', $_POST['usr_username']],
-            // ]);
-
-            $detail = UserModel::select(
+            $detail = User::select(
                 'id',
                 'usr_name',
                 'usr_username',
